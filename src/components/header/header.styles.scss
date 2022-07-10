@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(140, 206, 184);
+  font-family: 'Permanent Marker', sans-serif;
+  padding: 20px 42px;
+  box-shadow: 0 0.1em 5px rgba(140, 206, 184, 0.4);
+}
+
+.header--heart-icon {
+  width: 30px;
+  height: 30px;
+}

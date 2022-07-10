@@ -1,0 +1,42 @@
+.search--featured-container {
+  display: flex;
+  padding: 0 100px;
+  margin-bottom: 50px;
+
+  .featured-covers {
+    display: flex;
+    min-height: min-content;
+    overflow-x: scroll;
+    gap: 5px;
+  }
+
+  .featured--button-left {
+    background-color: hsl(160, 38, 89);
+    border-radius: 40px 0 0 40px;
+    margin-right: 1rem;
+    color: rgb(113, 163, 147);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .featured--button-right {
+    background-color: hsl(160, 38, 89);
+    border-radius: 0 40px 40px 0;
+    color: rgb(113, 163, 147);
+    padding: 1rem;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
