@@ -20,15 +20,13 @@ const Search = () => {
     <div className="search">
       <Creature className="search--creature" />
       <div className="search--form-container">
-        <form>
-          <input
-            type="text"
-            placeholder="Type something..."
-            className="search--input"
-            value={searchParams}
-            onChange={handleChange}
-          />
-        </form>
+        <input
+          type="text"
+          placeholder="Type something..."
+          className="search--input"
+          value={searchParams}
+          onChange={handleChange}
+        />
       </div>
       <span
         style={{
