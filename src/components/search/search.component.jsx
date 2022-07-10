@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { ReactComponent as Creature } from '../../assets/creature.svg';
 
@@ -8,6 +8,23 @@ import SearchCovers from '../search-covers/search-covers.component';
 
 const Search = () => {
   const [searchParams, setSearchParams] = useState('');
+  const [genres, setGenres] = useState([]);
+
+  useEffect(() => {
+    fetch('https://api.jikan.moe/v4/genres/anime')
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Something went wrong!');
+      })
+      .then((responseJson) => {
+        setGenres(responseJson.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -44,7 +61,12 @@ const Search = () => {
       </p>
       {/* TAG COMPONENTS GO HERE */}
       <span>
-        Random category: <strong>Action</strong>
+        Random category:{' '}
+        <strong>
+          {genres.length
+            ? genres[Math.floor(Math.random() * genres.length)].name
+            : null}
+        </strong>
       </span>
       <SearchCovers searchQuery={searchParams} />
       <p>Can't decide? Check out the random featured!</p>
