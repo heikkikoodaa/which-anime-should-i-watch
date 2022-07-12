@@ -8,23 +8,22 @@ import SearchCovers from '../search-covers/search-covers.component';
 
 const Search = () => {
   const [searchParams, setSearchParams] = useState('');
-  const [genres, setGenres] = useState([]);
+  const [genre, setGenre] = useState('');
 
-  useEffect(() => {
-    fetch('https://api.jikan.moe/v4/genres/anime')
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Something went wrong!');
-      })
-      .then((responseJson) => {
-        setGenres(responseJson.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     try {
+  //       const response = await fetch('https://api.jikan.moe/v4/genres/anime');
+  //       const data = await response.json();
+  //       console.log(data);
+  //       setGenre(data.data[Math.floor(Math.random() * data.data.length)].name);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+
+  //   getData();
+  // }, []);
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -61,14 +60,9 @@ const Search = () => {
       </p>
       {/* TAG COMPONENTS GO HERE */}
       <span>
-        Random category:{' '}
-        <strong>
-          {genres.length
-            ? genres[Math.floor(Math.random() * genres.length)].name
-            : null}
-        </strong>
+        Random category: <strong>{genre}</strong>
       </span>
-      <SearchCovers searchQuery={searchParams} />
+      <SearchCovers searchQuery={searchParams} genre={genre} />
       <p>Can't decide? Check out the random featured!</p>
       <FeaturedCarousel />
     </div>

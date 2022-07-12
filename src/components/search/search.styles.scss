@@ -28,28 +28,4 @@ $main-color: rgb(140, 206, 184);
   }
 }
 
-.search--cover-container {
-  padding: 20px 100px;
 
-  .covers {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-}
-
-.search--loadmore-button {
-  background-color: hsl(160, 38, 89);
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
-  color: rgb(113, 163, 147);
-  margin-top: 50px;
-
-  &:hover {
-    cursor: pointer;
-  }
-}

@@ -1,0 +1,24 @@
+.search--cover-container {
+  padding: 20px 100px;
+
+  .covers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+}
+
+.navigation-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-button {
+  background-color: #D8EEE7;
+  padding: 0.75em;
+  border-radius: 15px;
+  color: #71A393;
+  font-size: 1.5em;
+  cursor: pointer;
+}
